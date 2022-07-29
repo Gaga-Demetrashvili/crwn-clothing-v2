@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 // import { UserProvider } from './contexts/user.context';
-import { CategoriesProvider } from './contexts/categories.context';
-import { CartProvider } from './contexts/cart.context';
+// import { CategoriesProvider } from './contexts/categories.context';
+// import { CartProvider } from './contexts/cart.context';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
@@ -18,9 +18,9 @@ root.render(
       {/* <UserProvider> */}
       {/* Can reach up and get data from UserProvider */}
       {/* <CategoriesProvider> */}
-      <CartProvider>
-        <App />
-      </CartProvider>
+      {/* <CartProvider> */}
+      <App />
+      {/* </CartProvider> */}
       {/* </CategoriesProvider> */}
       {/* </UserProvider> */}
     </BrowserRouter>
