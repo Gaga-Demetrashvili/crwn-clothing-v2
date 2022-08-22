@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from './store/store';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './utils/stripe/stripe.utils';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,8 +23,10 @@ root.render(
       {/* Can reach up and get data from UserProvider */}
       {/* <CategoriesProvider> */}
       {/* <CartProvider> */}
-      <PersistGate persistor={persistor}>
-        <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <Elements stripe={stripePromise}>
+          <App />
+        </Elements>
       </PersistGate>
       {/* </CartProvider> */}
       {/* </CategoriesProvider> */}
