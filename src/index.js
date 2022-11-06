@@ -17,20 +17,20 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      {/* Can not reach down and get data from ProductsProvider */}
-      {/* <UserProvider> */}
-      {/* Can reach up and get data from UserProvider */}
-      {/* <CategoriesProvider> */}
-      {/* <CartProvider> */}
-      <PersistGate loading={null} persistor={persistor}>
+    {/* Can not reach down and get data from ProductsProvider */}
+    {/* <UserProvider> */}
+    {/* Can reach up and get data from UserProvider */}
+    {/* <CategoriesProvider> */}
+    {/* <CartProvider> */}
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter>
         <Elements stripe={stripePromise}>
           <App />
         </Elements>
-      </PersistGate>
-      {/* </CartProvider> */}
-      {/* </CategoriesProvider> */}
-      {/* </UserProvider> */}
-    </BrowserRouter>
-  </Provider>
+      </BrowserRouter>
+    </PersistGate>
+    {/* </CartProvider> */}
+    {/* </CategoriesProvider> */}
+    {/* </UserProvider> */}
+  </Provider >
 );
